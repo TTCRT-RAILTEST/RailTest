@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CA202EC-8B52-48B0-A4D3-FAD7743758D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RailTest.Frames</RootNamespace>
+    <AssemblyName>RailTest.Frames</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Compile\Binary\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>..\..\Compile\Binary\RailTest.Frames.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Compile\Binary\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>..\..\Compile\Binary\RailTest.Frames.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RailTest, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Compile\Binary\RailTest.dll</HintPath>
+    </Reference>
+    <Reference Include="RailTest.Algebra, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Compile\Binary\RailTest.Algebra.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Channel.cs" />
+    <Compile Include="Common\ChannelCollection.cs" />
+    <Compile Include="Common\ChannelHeader.cs" />
+    <Compile Include="Common\ChannelPoint.cs" />
+    <Compile Include="Common\FileReadMode.cs" />
+    <Compile Include="Common\Frame.cs" />
+    <Compile Include="Common\FrameHeader.cs" />
+    <Compile Include="Common\StorageFormat.cs" />
+    <Compile Include="Expansions\Catman\CatmanChannelHeader.cs" />
+    <Compile Include="Expansions\Catman\CatmanFrameHeader.cs" />
+    <Compile Include="Expansions\Catman\CatmanSensorInfo.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanCodeOfFilterCharacteristics.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanCodeOfFilterFrequency.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanCodeOfMeasuringRange.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanCodeOfSensorType.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanCodeOfSupplyVoltage.cs" />
+    <Compile Include="Expansions\Catman\Enumerations\CatmanDataFormat.cs" />
+    <Compile Include="Expansions\TestLab\Enumerations\TestLabChannelType.cs" />
+    <Compile Include="Expansions\TestLab\Enumerations\TestLabDataFormat.cs" />
+    <Compile Include="Expansions\TestLab\TestLabChannelHeader.cs" />
+    <Compile Include="Expansions\TestLab\TestLabFrameHeader.cs" />
+    <Compile Include="Files\FileReader.cs" />
+    <Compile Include="Files\FileWriter.cs" />
+    <Compile Include="Kernel\CatmanFrame.cs" />
+    <Compile Include="Kernel\Kernel.cs" />
+    <Compile Include="Kernel\String.cs" />
+    <Compile Include="Kernel\TestLabFrame.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
